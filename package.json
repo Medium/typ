@@ -1,0 +1,36 @@
+{
+    "name": "typ",
+    "version": "0.5.0",
+    "keywords":
+        ["type", "assert", "predicate"],
+    "description":
+        "Type predicates and assertions for Node",
+    "homepage": "https://github.com/Obvious/typ",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Obvious/typ.git"
+    },
+    "licenses": [ {
+        "type": "Apache 2.0",
+        "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+    } ],
+    "author": {
+        "name": "Dan Bornstein",
+        "email": "danfuzz@milk.com",
+        "url": "http://www.milk.com/"
+    },
+    "maintainers": [ {
+        "name": "Dan Bornstein",
+        "email": "danfuzz@obvious.com",
+        "web": "http://www.milk.com/"
+    } ],
+
+    "main": "lib/typ.js",
+    "engine": {
+        "node": ">=0.6.0"
+    },
+
+    "scripts": {
+        "test": "node test/test.js"
+    }
+}
