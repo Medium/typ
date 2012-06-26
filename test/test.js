@@ -79,6 +79,7 @@ var PREDICATE_CASES = [
   { v: Infinity, p: [typ.isNumber, typ.isDefined] },
   { v: -Infinity, p: [typ.isNumber, typ.isDefined] },
   { v: NaN, p: [typ.isNumber, typ.isDefined] }, // somewhat ironic
+  { v: -1e-1000, p: [typ.isNumber, typ.isDefined] },
   // regexps
   { v: /frobozz/, p: [typ.isRegExp, typ.isObject, typ.isDefined] },
   // strings
