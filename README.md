@@ -2,7 +2,7 @@ typ: Type predicates and assertions for Node
 ============================================
 
 This Node module is meant to provide a unified place to ask and
-assert about all the built-in JavaScript and Node types.
+assert about all the built-in JavaScript and core Node types.
 
 
 Building and Installing
