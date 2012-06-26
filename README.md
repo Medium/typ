@@ -4,8 +4,6 @@ type: Type predicates and assertions for Node
 This Node module is meant to provide a unified place to ask and
 assert about all the built-in JavaScript and Node types.
 
-Further documentation coming soon.
-
 
 Building and Installing
 -----------------------
