@@ -65,9 +65,15 @@ var PREDICATE_CASES = [
   // functions
   { v: function () { return 0; },
     p: [typ.isFunction, typ.isObject, typ.isDefined] },
+  { v: new Function("return 5"),
+    p: [typ.isFunction, typ.isObject, typ.isDefined] },
   // maps
   { v: {}, p: [typ.isMap, typ.isObject, typ.isDefined] },
   { v: { a: 10, b: 20 }, p: [typ.isMap, typ.isObject, typ.isDefined] },
+  // non-map objects
+  { v: new events.EventEmitter(), p: [typ.isObject, typ.isDefined] },
+  { v: { get a() { return 5; } }, p: [typ.isObject, typ.isDefined] },
+  { v: { set b(n) { } }, p: [typ.isObject, typ.isDefined] },
   // numbers
   { v: 0, p: [typ.isInt, typ.isUint, typ.isNumber, typ.isDefined] },
   { v: 10, p: [typ.isInt, typ.isUint, typ.isNumber, typ.isDefined] },
@@ -79,15 +85,18 @@ var PREDICATE_CASES = [
   { v: Infinity, p: [typ.isNumber, typ.isDefined] },
   { v: -Infinity, p: [typ.isNumber, typ.isDefined] },
   { v: NaN, p: [typ.isNumber, typ.isDefined] }, // somewhat ironic
-  { v: -1e-1000, p: [typ.isNumber, typ.isDefined] },
+  { v: -1e-1000, p: [typ.isNumber, typ.isDefined] }, // !isInt()
   // regexps
   { v: /frobozz/, p: [typ.isRegExp, typ.isObject, typ.isDefined] },
+  { v: new RegExp("fizmo"), p: [typ.isRegExp, typ.isObject, typ.isDefined] },
   // strings
   { v: "", p: [typ.isString, typ.isDefined] },
   { v: "blort", p: [typ.isString, typ.isDefined] },
+  // notable edge cases
+  { v: new Number(5), p: [typ.isObject, typ.isDefined] }, // !isNumber()
+  { v: new String("fuzz"), p: [typ.isObject, typ.isDefined] }, // !isString()
+  { v: new Boolean(true), p: [typ.isObject, typ.isDefined] }, // !isBoolean()
   // other
-  { v: new events.EventEmitter(), p: [typ.isObject, typ.isDefined] },
-  { v: { get a() { return 5; } }, p: [typ.isObject, typ.isDefined] },
   { v: null, p: [typ.isDefined] },
   { v: undefined, p: [typ.isUndefined] }
 ];
