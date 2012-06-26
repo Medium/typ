@@ -36,6 +36,65 @@ node ./test/test.js
 API Details
 -----------
 
+### Constants
+
+This module provides some convenient constants. With regards to the
+string constants, the author finds it handy to use them instead of
+quoted strings, since that makes typos cause more blatant errors.
+
+#### BOOLEAN
+
+This is what's returned by `typeof` when given a boolean value.
+
+#### FUNCTION
+
+This is what's returned by `typeof` when given a function value.
+
+#### NUMBER
+
+This is what's returned by `typeof` when given a numeric value.
+
+#### OBJECT
+
+This is what's returned by `typeof` when given an object value.
+
+#### STRING
+
+This is what's returned by `typeof` when given a string value.
+
+#### UNDEFINED
+
+This is what's returned by `typeof` when given `undefined`.
+
+#### ARRAY_PROTOTYPE
+
+This is the object prototype of array instances.
+
+#### FUNCTION_PROTOTYPE
+
+This is the object prototype of function instances.
+
+#### OBJECT_PROTOTYPE
+
+This is the default object prototype.
+
+### hasDefaultPrototype(obj) -> boolean
+
+Returns `true` if and only if the given object's prototype is the
+default one. That is, this is just a convenient way to say:
+
+```
+Object.getPrototypeOf(obj) === OBJECT_PROTOTYPE
+```
+
+### hasOwnProperty(obj, name) -> boolean
+
+This is a safe version of the per-object `hasOwnProperty()` method.
+You should use this any time you can't be 100% sure that the object
+you're checking won't possibly have a binding for `"hasOwnProperty"`.
+
+### Assertion Functions
+
 Coming soon!
 
 
@@ -43,7 +102,6 @@ To Do
 -----
 
 * Flesh out docs.
-* Add tests.
 
 
 Contributing
