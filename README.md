@@ -244,7 +244,7 @@ Contributing
 ------------
 
 Questions, comments, bug reports, and pull requests are all welcome.
-Submit them at [the project on GitHub](https://github.com/Obvious/leb/).
+Submit them at [the project on GitHub](https://github.com/Obvious/typ/).
 
 Bug reports that include steps-to-reproduce (including code) are the
 best. Even better, make them in the form of pull requests that update
