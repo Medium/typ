@@ -4,6 +4,11 @@ typ: Type predicates and assertions for Node
 This Node module is meant to provide a unified place to ask and
 assert about all the built-in JavaScript and core Node types.
 
+"Typ" is German for "type". Also, as of this writing, both "type" and
+"types" were taken in the npm module registry. The name was picked to
+be both memorable and short, the latter in order to encourage it to be
+used liberally.
+
 
 Building and Installing
 -----------------------
