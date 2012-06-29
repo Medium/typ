@@ -39,7 +39,7 @@ var PREDICATES = [
   { assert: typ.assertObject, predicate: typ.isObject },
   { assert: typ.assertRegExp, predicate: typ.isRegExp },
   { assert: typ.assertString, predicate: typ.isString },
-  { assert: typ.assertUint, predicate: typ.isUint },
+  { assert: typ.assertUInt, predicate: typ.isUInt },
   { assert: typ.assertUndefined, predicate: typ.isUndefined },
 ];
 
@@ -75,9 +75,9 @@ var PREDICATE_CASES = [
   { v: { get a() { return 5; } }, p: [typ.isObject, typ.isDefined] },
   { v: { set b(n) { } }, p: [typ.isObject, typ.isDefined] },
   // numbers
-  { v: 0, p: [typ.isInt, typ.isUint, typ.isNumber, typ.isDefined] },
-  { v: 10, p: [typ.isInt, typ.isUint, typ.isNumber, typ.isDefined] },
-  { v: 1e200, p: [typ.isInt, typ.isUint, typ.isNumber, typ.isDefined] },
+  { v: 0, p: [typ.isInt, typ.isUInt, typ.isNumber, typ.isDefined] },
+  { v: 10, p: [typ.isInt, typ.isUInt, typ.isNumber, typ.isDefined] },
+  { v: 1e200, p: [typ.isInt, typ.isUInt, typ.isNumber, typ.isDefined] },
   { v: -1, p: [typ.isInt, typ.isNumber, typ.isDefined] },
   { v: -12345, p: [typ.isInt, typ.isNumber, typ.isDefined] },
   { v: -12e55, p: [typ.isInt, typ.isNumber, typ.isDefined] },
