@@ -178,6 +178,11 @@ a map.
 
 The only value that is null is `null` per se.
 
+### nullish: isNullish(value), assertNullish(value)
+
+The only two values that are considered to be "nullish" are `null`
+and `undefined`.
+
 ### number: isNumber(value), assertNumber(value)
 
 A number is, well, a numeric value. Numbers are what result from

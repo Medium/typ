@@ -35,6 +35,8 @@ var PREDICATES = [
   { assert: typ.assertFunction, predicate: typ.isFunction },
   { assert: typ.assertInt, predicate: typ.isInt },
   { assert: typ.assertMap, predicate: typ.isMap },
+  { assert: typ.assertNull, predicate: typ.isNull },
+  { assert: typ.assertNullish, predicate: typ.isNullish },
   { assert: typ.assertNumber, predicate: typ.isNumber },
   { assert: typ.assertObject, predicate: typ.isObject },
   { assert: typ.assertRegExp, predicate: typ.isRegExp },
@@ -97,8 +99,8 @@ var PREDICATE_CASES = [
   { v: new String("fuzz"), p: [typ.isObject, typ.isDefined] }, // !isString()
   { v: new Boolean(true), p: [typ.isObject, typ.isDefined] }, // !isBoolean()
   // other
-  { v: null, p: [typ.isNull, typ.isDefined] },
-  { v: undefined, p: [typ.isUndefined] }
+  { v: null, p: [typ.isNull, typ.isNullish, typ.isDefined] },
+  { v: undefined, p: [typ.isNullish, typ.isUndefined] }
 ];
 
 
