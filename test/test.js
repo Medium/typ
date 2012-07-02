@@ -97,7 +97,7 @@ var PREDICATE_CASES = [
   { v: new String("fuzz"), p: [typ.isObject, typ.isDefined] }, // !isString()
   { v: new Boolean(true), p: [typ.isObject, typ.isDefined] }, // !isBoolean()
   // other
-  { v: null, p: [typ.isDefined] },
+  { v: null, p: [typ.isNull, typ.isDefined] },
   { v: undefined, p: [typ.isUndefined] }
 ];
 

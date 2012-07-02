@@ -174,6 +174,10 @@ and none of a map's bindings may be dynamic properties. That is,
 getter and setter functions disqualify an object from being considered
 a map.
 
+### null: isNull(value), assertNull(value)
+
+The only value that is null is `null` per se.
+
 ### number: isNumber(value), assertNumber(value)
 
 A number is, well, a numeric value. Numbers are what result from
