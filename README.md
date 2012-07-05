@@ -217,7 +217,7 @@ JavaScript functions.
 
 Notably, `String` objects are not considered strings here.
 
-### uint: isUint(value), assertUint(value)
+### uint: isUInt(value), assertUInt(value)
 
 Implies: int, number
 
