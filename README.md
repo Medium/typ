@@ -96,8 +96,11 @@ value argument is not of the expected type.
 
 Predicates all take a single argument, `value`, the value to test.
 Assertions all take two arguments, `value` as with the predicate, and
-an optional `message` to replace the default message to report in
-an error in the case of failure.
+an optional `message` to replace the default message to report in an
+error in the case of failure. The `message` if specified may contain
+any number of instances of `%s`, which will be substituted with the
+default message. `%%` is substituted with a single `%`. No other `%`
+substitution is done.
 
 The following run-down indicates the meaning of the various types, as
 far as this module is concerned. If being a particular type implies
