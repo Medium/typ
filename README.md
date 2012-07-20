@@ -94,25 +94,30 @@ whether or not its value argument is of the appropriate type, and an
 assertion does nothing other than throw a descriptive message if its
 value argument is not of the expected type.
 
+Predicates all take a single argument, `value`, the value to test.
+Assertions all take two arguments, `value` as with the predicate, and
+an optional `message` to replace the default message to report in
+an error in the case of failure.
+
 The following run-down indicates the meaning of the various types, as
 far as this module is concerned. If being a particular type implies
 also being some other type(s), then that fact is indicated by an
 "implies" line. (Note: Since all values but `undefined` are considered
 `defined`, that fact isn't listed.)
 
-### array: isArray(value), assertArray(value)
+### array: isArray(value), assertArray(value, message)
 
 Implies: object
 
 Arrays are what you get when you use the `[...]` array literal syntax
 or the `new Array(...)` constructor.
 
-### boolean: isBoolean(value), assertBoolean(value)
+### boolean: isBoolean(value), assertBoolean(value, message)
 
 The only two booleans are `true` and `false`. Notably, `Boolean` objects
 are not considered to be booleans here.
 
-### buffer: isBuffer(value), assertBuffer(value)
+### buffer: isBuffer(value), assertBuffer(value, message)
 
 Implies: object
 
@@ -120,18 +125,18 @@ Buffers are Node's standard ordered-list-of-bytes type, created
 with the `new Buffer(...)` constructor and used all over the place
 in Node.
 
-### date: isDate(value), assertDate(value)
+### date: isDate(value), assertDate(value, message)
 
 Implies: object
 
 Dates represent moments in time. They can be created with the
 `new Date(...)` constructor.
 
-### defined: isDefined(value), assertDefined(value)
+### defined: isDefined(value), assertDefined(value, message)
 
 All values other than `undefined` are `defined`.
 
-### error: isError(value), assertError(value)
+### error: isError(value), assertError(value, message)
 
 Implies: object
 
@@ -139,7 +144,7 @@ Errors are the standard exception values in JavaScript. They can
 be created by using the `new Error(...)` constructor as well
 as sub-class constructors.
 
-### function: isFunction(value), assertFunction(value)
+### function: isFunction(value), assertFunction(value, message)
 
 Implies: object
 
@@ -147,7 +152,7 @@ Functions are the things in JavaScript that do work. They can
 be created by using the `function...` definition and literal
 syntax, as well as with the `new Function(...)` constructor.
 
-### int: isInt(value), assertInt(value)
+### int: isInt(value), assertInt(value, message)
 
 Implies: number
 
@@ -164,7 +169,7 @@ in JavaScript with the expression `-1e-1000`. You can differentiate
 it from plain old regular zero by dividing `1` by it and observing
 that the result is `-Infinity`.)
 
-### map: isMap(value), assertMap(value)
+### map: isMap(value), assertMap(value, message)
 
 Implies: object
 
@@ -174,16 +179,16 @@ and none of a map's bindings may be dynamic properties. That is,
 getter and setter functions disqualify an object from being considered
 a map.
 
-### null: isNull(value), assertNull(value)
+### null: isNull(value), assertNull(value, message)
 
 The only value that is null is `null` per se.
 
-### nullish: isNullish(value), assertNullish(value)
+### nullish: isNullish(value), assertNullish(value, message)
 
 The only two values that are considered to be "nullish" are `null`
 and `undefined`.
 
-### number: isNumber(value), assertNumber(value)
+### number: isNumber(value), assertNumber(value, message)
 
 A number is, well, a numeric value. Numbers are what result from
 using number literals (like `123`) and are returned, for example,
@@ -195,13 +200,16 @@ the direct expansion of its name to "Not a Number".
 
 Notably, `Number` objects are not considered numbers here.
 
-### object: isObject(value), assertObject(value)
+### object: isObject(value), assertObject(value, message)
 
 An object is an arbitrary mapping of string keys to values. They
 can be created in any number of ways (and if you need more description
 than that, you should find a good intro book on JavaScript).
 
-### regexp: isRegExp(value), assertRegExp(value)
+Notably, `null` is *not* considered to be an object (even though
+`typeof null == "object"`).
+
+### regexp: isRegExp(value), assertRegExp(value, message)
 
 Implies: object
 
@@ -209,7 +217,7 @@ A regexp is an object that represents a "regular expression". They
 can be created by using the `/.../` literal syntax or the `new RegExp(...)`
 constructor.
 
-### string: isString(value), assertString(value)
+### string: isString(value), assertString(value, message)
 
 A string is an ordered sequence of characters. They can be created
 by using the `'...'` literal syntax and are produced by many standard
@@ -217,7 +225,7 @@ JavaScript functions.
 
 Notably, `String` objects are not considered strings here.
 
-### uint: isUInt(value), assertUInt(value)
+### uint: isUInt(value), assertUInt(value, message)
 
 Implies: int, number
 
@@ -225,7 +233,7 @@ A uint is an unsigned integer, also known as a whole number. That is,
 it's anything that's an int which is also non-negative. `0` is notably
 a uint.
 
-### undefined: isUndefined(value), assertUndefined(value)
+### undefined: isUndefined(value), assertUndefined(value, message)
 
 The only value that is undefined is `undefined`.
 
