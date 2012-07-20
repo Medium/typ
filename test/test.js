@@ -194,7 +194,7 @@ function testFailureFormat() {
     assert.fail(true, false, "Failed to throw.");
   } catch (ex) {
     assert.equal(ex.message,
-                 "Well % howdy %% [Expected string; got uint. (123)]");
+                 "Well % howdy %% [Expected string; got uint (123).]");
   }
 
   // We assume that all the substitution code is shared, and so we
