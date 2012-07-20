@@ -170,6 +170,17 @@ function testAllPredicates() {
         var msg = assertFunc.name + "(" + util.inspect(value) + ")";
         assert.fail(!expectTrue, expectTrue, msg);
       }
+
+      if (!passedAssert) {
+        var message = "sample message " + i + " // " + value;
+        try {
+          assertFunc(value, message);
+          var msg = assertFunc.name + "(" + util.inspect(value) + ", message)";
+          assert.fail(true, false, msg);
+        } catch (ex) {
+          assert.equal(ex.message, message);
+        }
+      }
     }
   }
 }
