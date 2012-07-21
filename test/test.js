@@ -170,8 +170,35 @@ function testAllPredicates() {
         var msg = assertFunc.name + "(" + util.inspect(value) + ")";
         assert.fail(!expectTrue, expectTrue, msg);
       }
+
+      if (!passedAssert) {
+        var message = "sample message " + i + " // " + value;
+        try {
+          assertFunc(value, message);
+          var msg = assertFunc.name + "(" + util.inspect(value) + ", message)";
+          assert.fail(true, false, msg);
+        } catch (ex) {
+          assert.equal(ex.message, message);
+        }
+      }
     }
   }
+}
+
+/**
+ * Test `%` handling in failure messages.
+ */
+function testFailureFormat() {
+  try {
+    typ.assertString(123, "Well %% howdy %%% [%s]");
+    assert.fail(true, false, "Failed to throw.");
+  } catch (ex) {
+    assert.equal(ex.message,
+                 "Well % howdy %% [Expected string; got uint (123).]");
+  }
+
+  // We assume that all the substitution code is shared, and so we
+  // don't bother testing all possible types.
 }
 
 /**
@@ -193,6 +220,7 @@ function testHasOwnProperty() {
 }
 
 testAllPredicates();
+testFailureFormat();
 testHasDefaultPrototype();
 testHasOwnProperty();
 
