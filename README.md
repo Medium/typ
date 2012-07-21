@@ -286,9 +286,12 @@ Author
 ([personal website](http://www.milk.com/)), supported by
 [The Obvious Corporation](http://obvious.com/).
 
-Thanks to [Jeremy Stanley](https://github.com/azulus)
-and [Dan Pupius](https://github.com/dpup)
+Thanks to [Jeremy Stanley](https://github.com/azulus),
+[Dan Pupius](https://github.com/dpup),
+[Mike Fleming](https://github.com/mikefleming),
+and [Sho Kuwamoto](https://github.com/skuwamoto)
 for suggestions.
+
 
 License
 -------
